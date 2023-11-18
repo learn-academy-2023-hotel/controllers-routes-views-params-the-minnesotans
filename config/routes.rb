@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/landing' => 'controller_name#landing'
+  get '/m' => 'controller_name#m'
+  get '/justin' => 'controller_name#justin'
+  get '/cubed/:num1' => 'controller_name#cubed'
+  get '/evenly/:num1/:num2' => 'controller_name#evenly'
+  get '/palindrome/:word' => 'controller_name#palindrome'
+  get '/madlib/:noun1/:adjective1/:adverb1/:verb1' => 'controller_name#madlib'
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  root 'controller_name#landing' #will have to be snake_case
 
   # Defines the root path route ("/")
   # root "posts#index"
